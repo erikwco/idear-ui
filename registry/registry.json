@@ -1,0 +1,65 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "idear-ui",
+  "homepage": "https://github.com/idear/idear-ui",
+  "items": [
+    {
+      "name": "status-badge",
+      "type": "registry:component",
+      "title": "StatusBadge",
+      "description": "Pill de estado con dot semántico (success, neutral, warning, brand, destructive).",
+      "dependencies": ["clsx", "tailwind-merge"],
+      "files": [
+        {
+          "path": "registry/components/status-badge.tsx",
+          "type": "registry:component",
+          "target": "components/shared/status-badge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "page-header",
+      "type": "registry:component",
+      "title": "PageHeader",
+      "description": "Encabezado de página: ícono de marca + título + descripción + slot de acciones.",
+      "dependencies": ["lucide-react"],
+      "files": [
+        {
+          "path": "registry/components/page-header.tsx",
+          "type": "registry:component",
+          "target": "components/shared/page-header.tsx"
+        }
+      ]
+    },
+    {
+      "name": "stat-card",
+      "type": "registry:component",
+      "title": "StatCard",
+      "description": "Tile de KPI con label, valor tabular e ícono de marca.",
+      "dependencies": ["lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["card"],
+      "files": [
+        {
+          "path": "registry/components/stat-card.tsx",
+          "type": "registry:component",
+          "target": "components/shared/stat-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "help-hint",
+      "type": "registry:component",
+      "title": "HelpHint",
+      "description": "Ícono de ayuda corporativo que abre un popover (mobile-friendly) con el texto.",
+      "dependencies": ["lucide-react", "clsx", "tailwind-merge"],
+      "registryDependencies": ["popover"],
+      "files": [
+        {
+          "path": "registry/components/help-hint.tsx",
+          "type": "registry:component",
+          "target": "components/shared/help-hint.tsx"
+        }
+      ]
+    }
+  ]
+}

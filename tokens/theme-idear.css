@@ -1,0 +1,193 @@
+/* ============================================================================
+ * Tema: IDEAR (naranja)
+ * Contrato de tokens IDEAR — ver tokens/contract.md
+ *
+ * Mismos NOMBRES de variable que theme-generaciontrabajo.css; distintos valores.
+ * Valores AUTORITATIVOS extraídos de idqrgen / idearShorteningFront.
+ * Valores marcados (DERIVADO) se completaron para cumplir el contrato y deben
+ * revisarse/afinarse con diseño. Formato en hex (origen de la marca IDEAR);
+ * se puede convertir a oklch más adelante para uniformar con el tema teal.
+ * ========================================================================== */
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* IDEAR usa Space Grotesk para títulos */
+  --font-display: "Space Grotesk", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --shadow-card: 0 1px 2px -1px rgb(28 25 23 / 0.06), 0 2px 4px rgb(28 25 23 / 0.04);
+  --shadow-card-hover: 0 4px 8px -2px rgb(28 25 23 / 0.08),
+    0 8px 18px -6px rgb(28 25 23 / 0.07);
+
+  --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Escala de marca (naranja IDEAR) */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-accent-amber: var(--accent-amber);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Brand — naranja IDEAR (escala de idqrgen tailwind.config) */
+  --brand-50: #fff7ed;
+  --brand-100: #ffedd5;
+  --brand-200: #fed7aa;
+  --brand-300: #fdb874;
+  --brand-400: #fb923c;
+  --brand-500: #f97316;
+  --brand-600: #ea580c;
+  --brand-700: #c2410c;
+  --brand-800: #9a3412;
+  --brand-900: #7c2d12;
+  --accent-amber: #f59e0b; /* DERIVADO: acento ámbar de apoyo */
+
+  /* Superficies neutras cálidas (familia stone) — autoritativas */
+  --background: #fefbf8;
+  --foreground: #1c1917;
+  --card: #ffffff;
+  --card-foreground: #1c1917; /* DERIVADO */
+  --popover: #ffffff; /* DERIVADO */
+  --popover-foreground: #1c1917; /* DERIVADO */
+  --primary: #ea580c;
+  --primary-foreground: #ffffff;
+  --secondary: #f5f3f0; /* DERIVADO (= muted) */
+  --secondary-foreground: #292524; /* DERIVADO */
+  --muted: #f5f3f0;
+  --muted-foreground: #78716c;
+  --accent: #fff7ed; /* DERIVADO (orange-50) */
+  --accent-foreground: #c2410c; /* DERIVADO (orange-700) */
+  --destructive: #dc2626; /* era --danger en el origen */
+  --success: #16a34a;
+  --warning: #d97706;
+  --border: #e7e5e4;
+  --input: #e7e5e4;
+  --ring: #ea580c;
+  --chart-1: #ea580c; /* DERIVADO */
+  --chart-2: #16a34a; /* DERIVADO */
+  --chart-3: #f59e0b; /* DERIVADO */
+  --chart-4: #fb923c; /* DERIVADO */
+  --chart-5: #c2410c; /* DERIVADO */
+
+  /* Sidebar (DERIVADO: estructura igual al tema teal, en naranja) */
+  --sidebar: #fefbf8;
+  --sidebar-foreground: #292524;
+  --sidebar-primary: #c2410c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #fff7ed;
+  --sidebar-accent-foreground: #c2410c;
+  --sidebar-border: #e7e5e4;
+  --sidebar-ring: #ea580c;
+}
+
+.dark {
+  --background: #0c0a09;
+  --foreground: #fafaf9;
+  --card: #1c1917;
+  --card-foreground: #fafaf9; /* DERIVADO */
+  --popover: #1c1917; /* DERIVADO */
+  --popover-foreground: #fafaf9; /* DERIVADO */
+  --primary: #f97316;
+  --primary-foreground: #1c1917;
+  --secondary: #292524; /* DERIVADO */
+  --secondary-foreground: #fafaf9; /* DERIVADO */
+  --muted: #292524;
+  --muted-foreground: #a8a29e; /* DERIVADO (stone-400) */
+  --accent: #292524; /* DERIVADO */
+  --accent-foreground: #fafaf9; /* DERIVADO */
+  --destructive: #f87171; /* era --danger */
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --border: #292524; /* DERIVADO */
+  --input: #292524; /* DERIVADO */
+  --ring: #f97316; /* DERIVADO */
+  --chart-1: #f97316; /* DERIVADO */
+  --chart-2: #22c55e; /* DERIVADO */
+  --chart-3: #f59e0b; /* DERIVADO */
+  --chart-4: #fb923c; /* DERIVADO */
+  --chart-5: #c2410c; /* DERIVADO */
+  --sidebar: #1c1917; /* DERIVADO */
+  --sidebar-foreground: #fafaf9;
+  --sidebar-primary: #f97316;
+  --sidebar-primary-foreground: #1c1917;
+  --sidebar-accent: #292524;
+  --sidebar-accent-foreground: #fafaf9;
+  --sidebar-border: #292524;
+  --sidebar-ring: #f97316;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"] {
+    accent-color: var(--brand-600);
+  }
+}
