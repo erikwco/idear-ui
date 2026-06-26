@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "help-hint",
+  "type": "registry:component",
+  "title": "HelpHint",
+  "description": "Ícono de ayuda corporativo que abre un popover (mobile-friendly) con el texto.",
+  "dependencies": [
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "popover"
+  ],
+  "files": [
+    {
+      "path": "registry/components/help-hint.tsx",
+      "content": "import * as React from \"react\";\nimport { HelpCircle } from \"lucide-react\";\n\nimport { Popover, PopoverContent, PopoverTrigger } from \"@/components/ui/popover\";\nimport { cn } from \"@/lib/utils\";\n\n/**\n * Ícono de ayuda corporativo. Al presionarlo (clic o tap) abre un popover con\n * el texto de ayuda. Usa Popover (no Tooltip) para que funcione bien en mobile.\n *\n * Uso:\n *   <HelpHint>Texto de ayuda que aparece al tocar el ícono.</HelpHint>\n */\nexport default function HelpHint({\n  children,\n  label = \"Más información\",\n  side = \"top\",\n  align = \"center\",\n  className,\n  contentClassName,\n}: {\n  children: React.ReactNode;\n  /** Texto accesible del botón (aria-label). */\n  label?: string;\n  side?: \"top\" | \"right\" | \"bottom\" | \"left\";\n  align?: \"start\" | \"center\" | \"end\";\n  className?: string;\n  contentClassName?: string;\n}) {\n  return (\n    <Popover>\n      <PopoverTrigger asChild>\n        <button\n          type=\"button\"\n          aria-label={label}\n          className={cn(\n            \"inline-flex size-5 shrink-0 items-center justify-center rounded-full text-brand-600 transition-colors hover:bg-brand-50 hover:text-brand-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-600/40\",\n            className,\n          )}\n        >\n          <HelpCircle className=\"size-4\" strokeWidth={2} />\n        </button>\n      </PopoverTrigger>\n      <PopoverContent\n        side={side}\n        align={align}\n        className={cn(\"w-64 text-sm leading-relaxed text-muted-foreground\", contentClassName)}\n      >\n        {children}\n      </PopoverContent>\n    </Popover>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/shared/help-hint.tsx"
+    }
+  ]
+}

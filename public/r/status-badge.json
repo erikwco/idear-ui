@@ -1,0 +1,19 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "status-badge",
+  "type": "registry:component",
+  "title": "StatusBadge",
+  "description": "Pill de estado con dot semántico (success, neutral, warning, brand, destructive).",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge"
+  ],
+  "files": [
+    {
+      "path": "registry/components/status-badge.tsx",
+      "content": "import type { ReactNode } from \"react\";\nimport { cn } from \"@/lib/utils\";\n\nexport type StatusTone =\n  | \"success\"\n  | \"neutral\"\n  | \"warning\"\n  | \"brand\"\n  | \"destructive\";\n\nconst dotByTone: Record<StatusTone, string> = {\n  success: \"bg-success\",\n  neutral: \"bg-muted-foreground/50\",\n  warning: \"bg-warning\",\n  brand: \"bg-brand-600\",\n  destructive: \"bg-destructive\",\n};\n\ninterface StatusBadgeProps {\n  tone?: StatusTone;\n  children: ReactNode;\n  className?: string;\n}\n\n/**\n * Pill de estado con dot coloreado — el color semántico vive en el dot,\n * el texto se mantiene en foreground de alto contraste.\n */\nexport function StatusBadge({ tone = \"neutral\", children, className }: StatusBadgeProps) {\n  return (\n    <span\n      className={cn(\n        \"inline-flex items-center gap-1.5 rounded-md border border-border bg-card px-2 py-0.5 text-xs font-medium text-foreground\",\n        className,\n      )}\n    >\n      <span className={cn(\"size-1.5 rounded-full\", dotByTone[tone])} aria-hidden />\n      {children}\n    </span>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/shared/status-badge.tsx"
+    }
+  ]
+}

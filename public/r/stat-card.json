@@ -1,0 +1,23 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "stat-card",
+  "type": "registry:component",
+  "title": "StatCard",
+  "description": "Tile de KPI con label, valor tabular e ícono de marca.",
+  "dependencies": [
+    "lucide-react",
+    "clsx",
+    "tailwind-merge"
+  ],
+  "registryDependencies": [
+    "card"
+  ],
+  "files": [
+    {
+      "path": "registry/components/stat-card.tsx",
+      "content": "import type { LucideIcon } from \"lucide-react\";\nimport { Card, CardContent } from \"@/components/ui/card\";\nimport { cn } from \"@/lib/utils\";\n\ninterface StatCardProps {\n  label: string;\n  value: number | string;\n  icon: LucideIcon;\n  /** Línea de apoyo opcional debajo del valor. */\n  hint?: string;\n  className?: string;\n}\n\n/**\n * Tile de KPI: label muted, valor protagonista (tabular), ícono con tinte\n * de marca. Sombra suave con hover institucional.\n */\nexport function StatCard({ label, value, icon: Icon, hint, className }: StatCardProps) {\n  return (\n    <Card\n      className={cn(\n        \"gap-0 py-0 shadow-card transition-shadow duration-200 hover:shadow-card-hover\",\n        className,\n      )}\n    >\n      <CardContent className=\"flex items-center justify-between gap-4 p-5\">\n        <div className=\"min-w-0\">\n          <p className=\"text-xs font-medium uppercase tracking-wide text-muted-foreground\">\n            {label}\n          </p>\n          <p className=\"mt-1 text-2xl font-semibold tabular-nums text-foreground\">\n            {value}\n          </p>\n          {hint ? (\n            <p className=\"mt-0.5 text-xs text-muted-foreground\">{hint}</p>\n          ) : null}\n        </div>\n        <div className=\"flex size-10 shrink-0 items-center justify-center rounded-lg bg-brand-50 text-brand-700\">\n          <Icon className=\"size-5\" strokeWidth={2} aria-hidden />\n        </div>\n      </CardContent>\n    </Card>\n  );\n}\n",
+      "type": "registry:component",
+      "target": "components/shared/stat-card.tsx"
+    }
+  ]
+}

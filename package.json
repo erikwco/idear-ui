@@ -1,0 +1,29 @@
+{
+  "name": "idear-ui",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Design system compartido IDEAR: contrato de tokens, temas por marca y registro de componentes.",
+  "type": "module",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "registry:build": "shadcn build registry/registry.json --output public/r"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.544.0",
+    "radix-ui": "^1.6.0",
+    "tailwind-merge": "^3.3.1"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "shadcn": "^2.4.0",
+    "typescript": "^5.9.2"
+  }
+}
