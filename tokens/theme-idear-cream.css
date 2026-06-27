@@ -1,0 +1,207 @@
+/* ============================================================================
+ * Tema: IDEAR Crema (corporativo — admin.idear.pro)
+ * Contrato de tokens IDEAR — ver tokens/contract.md
+ *
+ * Fuente de verdad: admin.idear.pro/design/Idear Admin Design System/
+ *   (colors_and_type.css). Valores convertidos de HSL → oklch para uniformar
+ *   el formato con el resto del contrato. Marca corporativa de IDEAR:
+ *   crema/tinta/pastel (NO el naranja de qrUI/shorts, que es sub-brand).
+ *
+ * Uso (Tailwind v4): en el app.css de la app,
+ *   @import "tailwindcss";
+ *   @import "tw-animate-css";
+ *   @import "./theme-idear-cream.css";
+ *
+ * Tokens marcados DERIVADO no existían en admin como tal y se completaron para
+ * cumplir el contrato (success/warning desde sage/amber; brand = rampa
+ * crema→tinta; charts dark). Afinables con diseño.
+ * ========================================================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Fraunces:opsz,wght@9..144,400;9..144,600&family=JetBrains+Mono:wght@400;500&display=swap");
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "Fraunces", "Outfit", ui-serif, Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+  /* Sombras cálidas, baja elevación (tinte marrón, nunca azul) */
+  --shadow-card: 0 1px 2px 0 rgb(64 52 32 / 0.06), 0 1px 1px -1px rgb(64 52 32 / 0.04);
+  --shadow-card-hover: 0 4px 10px -2px rgb(64 52 32 / 0.08),
+    0 2px 4px -2px rgb(64 52 32 / 0.05);
+
+  /* Motion */
+  --ease-out-expo: cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-warning: var(--warning);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  /* Escala de marca: crema (el alma) → tinta cálida (brand dark). DERIVADO */
+  --color-brand-50: var(--brand-50);
+  --color-brand-100: var(--brand-100);
+  --color-brand-200: var(--brand-200);
+  --color-brand-300: var(--brand-300);
+  --color-brand-400: var(--brand-400);
+  --color-brand-500: var(--brand-500);
+  --color-brand-600: var(--brand-600);
+  --color-brand-700: var(--brand-700);
+  --color-brand-800: var(--brand-800);
+  --color-brand-900: var(--brand-900);
+  --color-accent-amber: var(--accent-amber);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.5rem;
+
+  /* Marca: rampa crema → tinta. DERIVADO (admin no la expone como 50..900) */
+  --brand-50: oklch(0.977 0.013 86.8);
+  --brand-100: oklch(0.933 0.026 84.6);
+  --brand-200: oklch(0.901 0.036 83.8);
+  --brand-300: oklch(0.841 0.048 85.2);
+  --brand-400: oklch(0.778 0.059 83.4);
+  --brand-500: oklch(0.712 0.067 80.4);
+  --brand-600: oklch(0.621 0.065 78.5);
+  --brand-700: oklch(0.504 0.051 77.3);
+  --brand-800: oklch(0.406 0.04 72.2);
+  --brand-900: oklch(0.275 0.007 67.5);
+  --accent-amber: oklch(0.704 0.127 80.6); /* amber #c89633 */
+
+  /* Superficies: lienzo crema, tarjetas blancas, tinta cálida (admin) */
+  --background: oklch(0.976 0.011 84.6); /* cream-50 #fbf7ee */
+  --foreground: oklch(0.239 0.006 67.5); /* ink */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.239 0.006 67.5);
+  --popover: oklch(0.987 0.004 84.6);
+  --popover-foreground: oklch(0.239 0.006 67.5);
+  --primary: oklch(0.229 0.006 67.5); /* ink #1f1d1a */
+  --primary-foreground: oklch(0.962 0.013 84.6);
+  --secondary: oklch(0.919 0.02 81.5); /* sand-lite */
+  --secondary-foreground: oklch(0.229 0.006 67.5);
+  --muted: oklch(0.931 0.013 81.5);
+  --muted-foreground: oklch(0.536 0.021 71.1);
+  --accent: oklch(0.909 0.033 78.1);
+  --accent-foreground: oklch(0.229 0.006 67.5);
+  --destructive: oklch(0.62 0.122 30); /* rose #c26a60 (NO rojo puro) */
+  --success: oklch(0.617 0.056 147.3); /* sage #6f8f72 — DERIVADO */
+  --warning: oklch(0.704 0.127 80.6); /* amber #c89633 — DERIVADO */
+  --border: oklch(0.874 0.025 78.2); /* sand #e4d9c1 */
+  --input: oklch(0.874 0.025 78.2);
+  --ring: oklch(0.374 0.012 67.4);
+  --chart-1: oklch(0.629 0.083 145.3); /* sage */
+  --chart-2: oklch(0.656 0.103 50.3); /* clay */
+  --chart-3: oklch(0.619 0.04 233.7); /* sky */
+  --chart-4: oklch(0.827 0.073 81); /* sand */
+  --chart-5: oklch(0.62 0.122 30); /* rose */
+
+  /* La sidebar comparte el lienzo crema; las tarjetas blancas flotan encima */
+  --sidebar: oklch(0.974 0.008 84.6);
+  --sidebar-foreground: oklch(0.405 0.015 71.1);
+  --sidebar-primary: oklch(0.229 0.006 67.5);
+  --sidebar-primary-foreground: oklch(0.981 0.007 84.6);
+  --sidebar-accent: oklch(0.933 0.019 78.2);
+  --sidebar-accent-foreground: oklch(0.229 0.006 67.5);
+  --sidebar-border: oklch(0.874 0.025 78.2);
+  --sidebar-ring: oklch(0.47 0.016 67.4);
+}
+
+/* Dark = panel de marca (ink). El primary es acromático (tinta), así que en
+ * dark se invierte a crema-claro (como admin), no se "conserva el hue". */
+.dark {
+  --background: oklch(0.217 0.006 67.5);
+  --foreground: oklch(0.96 0.01 84.6);
+  --card: oklch(0.251 0.007 67.5);
+  --card-foreground: oklch(0.96 0.01 84.6);
+  --popover: oklch(0.217 0.006 67.5);
+  --popover-foreground: oklch(0.96 0.01 84.6);
+  --primary: oklch(0.934 0.017 84.6); /* cream-light */
+  --primary-foreground: oklch(0.229 0.006 67.5);
+  --secondary: oklch(0.303 0.008 67.5);
+  --secondary-foreground: oklch(0.96 0.01 84.6);
+  --muted: oklch(0.303 0.008 67.5);
+  --muted-foreground: oklch(0.743 0.02 78.2);
+  --accent: oklch(0.324 0.009 67.5);
+  --accent-foreground: oklch(0.96 0.01 84.6);
+  --destructive: oklch(0.556 0.136 30.7);
+  --success: oklch(0.66 0.07 147); /* DERIVADO (sage aclarado) */
+  --warning: oklch(0.75 0.13 81); /* DERIVADO (amber aclarado) */
+  --border: oklch(0.344 0.01 67.5);
+  --input: oklch(0.344 0.01 67.5);
+  --ring: oklch(0.824 0.036 78.1);
+  --chart-1: oklch(0.68 0.085 145); /* DERIVADO */
+  --chart-2: oklch(0.70 0.10 50);
+  --chart-3: oklch(0.67 0.045 234);
+  --chart-4: oklch(0.83 0.073 81);
+  --chart-5: oklch(0.66 0.13 31);
+  --sidebar: oklch(0.194 0.005 67.5);
+  --sidebar-foreground: oklch(0.917 0.015 84.6);
+  --sidebar-primary: oklch(0.922 0.024 84.6);
+  --sidebar-primary-foreground: oklch(0.229 0.006 67.5);
+  --sidebar-accent: oklch(0.282 0.008 67.5);
+  --sidebar-accent-foreground: oklch(0.96 0.01 84.6);
+  --sidebar-border: oklch(0.303 0.008 67.5);
+  --sidebar-ring: oklch(0.752 0.051 77.9);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+  p {
+    text-wrap: pretty;
+  }
+  /* Tinte de marca para controles nativos (checkbox/radio/range) */
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="range"] {
+    accent-color: var(--brand-600);
+  }
+}

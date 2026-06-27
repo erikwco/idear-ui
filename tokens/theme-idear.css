@@ -2,11 +2,14 @@
  * Tema: IDEAR (naranja)
  * Contrato de tokens IDEAR — ver tokens/contract.md
  *
+ * Sub-brand NARANJA (productos públicos/QR): qrUI (idqrgen) y shorts. NO es la
+ * marca IDEAR corporativa (esa es theme-idear-cream.css, derivada de admin).
+ *
  * Mismos NOMBRES de variable que theme-generaciontrabajo.css; distintos valores.
- * Valores AUTORITATIVOS extraídos de idqrgen / idearShorteningFront.
- * Valores marcados (DERIVADO) se completaron para cumplir el contrato y deben
- * revisarse/afinarse con diseño. Formato en hex (origen de la marca IDEAR);
- * se puede convertir a oklch más adelante para uniformar con el tema teal.
+ * Valores en oklch, sincronizados con la migración de qrUI (idqrgen, 2026-06-26)
+ * — esta es la fuente; qrUI consume una adaptación TW3 (componentes L C H pelados
+ * envueltos en oklch(var(--token) / <alpha-value>)). Naranja = paleta orange
+ * canónica de Tailwind v4. (DERIVADO) = completado para cumplir el contrato.
  * ========================================================================== */
 
 @custom-variant dark (&:is(.dark *));
@@ -81,93 +84,93 @@
 :root {
   --radius: 0.75rem;
 
-  /* Brand — naranja IDEAR (escala de idqrgen tailwind.config) */
-  --brand-50: #fff7ed;
-  --brand-100: #ffedd5;
-  --brand-200: #fed7aa;
-  --brand-300: #fdb874;
-  --brand-400: #fb923c;
-  --brand-500: #f97316;
-  --brand-600: #ea580c;
-  --brand-700: #c2410c;
-  --brand-800: #9a3412;
-  --brand-900: #7c2d12;
-  --accent-amber: #f59e0b; /* DERIVADO: acento ámbar de apoyo */
+  /* Brand — naranja (paleta orange oklch canónica de Tailwind v4) */
+  --brand-50: oklch(0.98 0.016 73);
+  --brand-100: oklch(0.954 0.038 75);
+  --brand-200: oklch(0.901 0.076 70);
+  --brand-300: oklch(0.837 0.128 66);
+  --brand-400: oklch(0.75 0.183 56);
+  --brand-500: oklch(0.705 0.213 47);
+  --brand-600: oklch(0.646 0.222 41);
+  --brand-700: oklch(0.553 0.195 38);
+  --brand-800: oklch(0.47 0.157 37);
+  --brand-900: oklch(0.408 0.123 38);
+  --accent-amber: oklch(0.769 0.188 70); /* amber-500 — acento ámbar de apoyo */
 
-  /* Superficies neutras cálidas (familia stone) — autoritativas */
-  --background: #fefbf8;
-  --foreground: #1c1917;
-  --card: #ffffff;
-  --card-foreground: #1c1917; /* DERIVADO */
-  --popover: #ffffff; /* DERIVADO */
-  --popover-foreground: #1c1917; /* DERIVADO */
-  --primary: #ea580c;
-  --primary-foreground: #ffffff;
-  --secondary: #f5f3f0; /* DERIVADO (= muted) */
-  --secondary-foreground: #292524; /* DERIVADO */
-  --muted: #f5f3f0;
-  --muted-foreground: #78716c;
-  --accent: #fff7ed; /* DERIVADO (orange-50) */
-  --accent-foreground: #c2410c; /* DERIVADO (orange-700) */
-  --destructive: #dc2626; /* era --danger en el origen */
-  --success: #16a34a;
-  --warning: #d97706;
-  --border: #e7e5e4;
-  --input: #e7e5e4;
-  --ring: #ea580c;
-  --chart-1: #ea580c; /* DERIVADO */
-  --chart-2: #16a34a; /* DERIVADO */
-  --chart-3: #f59e0b; /* DERIVADO */
-  --chart-4: #fb923c; /* DERIVADO */
-  --chart-5: #c2410c; /* DERIVADO */
+  /* Superficies neutras cálidas (familia stone) */
+  --background: oklch(0.992 0.005 80);
+  --foreground: oklch(0.216 0.006 56);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.216 0.006 56); /* DERIVADO */
+  --popover: oklch(1 0 0); /* DERIVADO */
+  --popover-foreground: oklch(0.216 0.006 56); /* DERIVADO */
+  --primary: oklch(0.646 0.222 41); /* orange-600 */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.97 0.004 75); /* DERIVADO */
+  --secondary-foreground: oklch(0.32 0.006 56); /* DERIVADO */
+  --muted: oklch(0.97 0.004 75);
+  --muted-foreground: oklch(0.553 0.013 58);
+  --accent: oklch(0.957 0.03 75); /* DERIVADO (tinte naranja suave) */
+  --accent-foreground: oklch(0.553 0.195 38); /* DERIVADO (orange-700) */
+  --destructive: oklch(0.577 0.245 27); /* era --danger en el origen */
+  --success: oklch(0.627 0.194 149);
+  --warning: oklch(0.666 0.179 58);
+  --border: oklch(0.923 0.003 49);
+  --input: oklch(0.923 0.003 49);
+  --ring: oklch(0.646 0.222 41);
+  --chart-1: oklch(0.646 0.222 41); /* DERIVADO */
+  --chart-2: oklch(0.627 0.194 149); /* DERIVADO */
+  --chart-3: oklch(0.666 0.179 58); /* DERIVADO */
+  --chart-4: oklch(0.75 0.183 56); /* DERIVADO */
+  --chart-5: oklch(0.47 0.157 37); /* DERIVADO */
 
   /* Sidebar (DERIVADO: estructura igual al tema teal, en naranja) */
-  --sidebar: #fefbf8;
-  --sidebar-foreground: #292524;
-  --sidebar-primary: #c2410c;
-  --sidebar-primary-foreground: #ffffff;
-  --sidebar-accent: #fff7ed;
-  --sidebar-accent-foreground: #c2410c;
-  --sidebar-border: #e7e5e4;
-  --sidebar-ring: #ea580c;
+  --sidebar: oklch(0.985 0.004 80);
+  --sidebar-foreground: oklch(0.3 0.006 56);
+  --sidebar-primary: oklch(0.646 0.222 41);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.957 0.03 75);
+  --sidebar-accent-foreground: oklch(0.553 0.195 38);
+  --sidebar-border: oklch(0.923 0.003 49);
+  --sidebar-ring: oklch(0.646 0.222 41);
 }
 
-/* Dark "dim": carbón cálido (no negro puro), conserva el naranja como primary.
- * Bordes con alfa para suavidad. Afinable con diseño. */
+/* Dark "dim": carbón cálido (no negro puro), conserva el naranja como primary
+ * (marca cromática). Sincronizado con qrUI. Afinable con diseño. */
 .dark {
-  --background: #1c1815;
-  --foreground: #f2efea;
-  --card: #231f1b;
-  --card-foreground: #f2efea;
-  --popover: #231f1b;
-  --popover-foreground: #f2efea;
-  --primary: #fb923c;
-  --primary-foreground: #1c1815;
-  --secondary: #2b2520;
-  --secondary-foreground: #f2efea;
-  --muted: #2b2520;
-  --muted-foreground: #bab1a8;
-  --accent: #34291f;
-  --accent-foreground: #f2efea;
-  --destructive: #f87171;
-  --success: #4ade80;
-  --warning: #fbbf24;
-  --border: #ffffff1a;
-  --input: #ffffff26;
-  --ring: #f97316;
-  --chart-1: #fb923c;
-  --chart-2: #4ade80;
-  --chart-3: #fbbf24;
-  --chart-4: #fdb874;
-  --chart-5: #ea580c;
-  --sidebar: #211d19;
-  --sidebar-foreground: #f2efea;
-  --sidebar-primary: #fb923c;
-  --sidebar-primary-foreground: #1c1815;
-  --sidebar-accent: #34291f;
-  --sidebar-accent-foreground: #f2efea;
-  --sidebar-border: #ffffff1a;
-  --sidebar-ring: #f97316;
+  --background: oklch(0.147 0.004 49);
+  --foreground: oklch(0.985 0.001 106);
+  --card: oklch(0.216 0.006 56);
+  --card-foreground: oklch(0.985 0.001 106);
+  --popover: oklch(0.216 0.006 56);
+  --popover-foreground: oklch(0.985 0.001 106);
+  --primary: oklch(0.705 0.213 47); /* orange-500 */
+  --primary-foreground: oklch(0.216 0.006 56);
+  --secondary: oklch(0.268 0.007 34);
+  --secondary-foreground: oklch(0.985 0.001 106);
+  --muted: oklch(0.268 0.007 34);
+  --muted-foreground: oklch(0.709 0.01 56);
+  --accent: oklch(0.268 0.007 34);
+  --accent-foreground: oklch(0.985 0.001 106);
+  --destructive: oklch(0.704 0.191 22);
+  --success: oklch(0.723 0.219 149);
+  --warning: oklch(0.769 0.188 70);
+  --border: oklch(0.268 0.007 34);
+  --input: oklch(0.268 0.007 34);
+  --ring: oklch(0.705 0.213 47);
+  --chart-1: oklch(0.705 0.213 47);
+  --chart-2: oklch(0.723 0.219 149);
+  --chart-3: oklch(0.769 0.188 70);
+  --chart-4: oklch(0.837 0.128 66);
+  --chart-5: oklch(0.553 0.195 38);
+  --sidebar: oklch(0.216 0.006 56);
+  --sidebar-foreground: oklch(0.985 0.001 106);
+  --sidebar-primary: oklch(0.705 0.213 47);
+  --sidebar-primary-foreground: oklch(0.216 0.006 56);
+  --sidebar-accent: oklch(0.268 0.007 34);
+  --sidebar-accent-foreground: oklch(0.985 0.001 106);
+  --sidebar-border: oklch(0.268 0.007 34);
+  --sidebar-ring: oklch(0.705 0.213 47);
 }
 
 @layer base {
