@@ -47,8 +47,11 @@ Cualquier tema nuevo DEBE definir todas estas variables (en `:root` y `.dark`).
 | `--font-sans` | Cuerpo (Inter en ambas marcas) |
 | `--font-display` | Títulos — solo IDEAR (Space Grotesk) por ahora. Decisión abierta: ¿GT lo adopta? |
 
-## Decisiones abiertas (ver spec del design system)
-1. Tailwind v3 (shorts/qrUI) vs v4 (eventos/plazas): los tokens se comparten igual como variables CSS; falta variante/mapeo v3 documentado.
-2. `theme-idear.css`: los valores marcados `DERIVADO` se completaron para cumplir el contrato y deben afinarse con diseño; convertir a oklch para uniformar con teal (opcional).
-3. Dark mode teal: `--primary` y `--sidebar-primary` en `.dark` hoy no usan el brand (vienen del default de shadcn) — confirmar intención.
-4. `--font-display` en GT.
+## Modo oscuro
+Ambos temas implementan un dark **"dim"**: carbón cálido (no negro puro), texto off-white, bordes con baja opacidad, y **conserva el color de marca como `--primary`/`--sidebar-primary`** (a diferencia del default shadcn, que en dark vuelve `--primary` casi blanco). Activación por clase `.dark`. Valores afinables con diseño.
+
+## Decisiones
+1. **Tailwind v3 → v4 (en evaluación).** shorts y qrUI están en v3; el plan es migrarlos a v4 para unificar y que consuman los mismos `theme-*.css` sin variantes. qrUI es migración acotada (solo pipeline CSS, no React); shorts es mayor (TW v3→v4 + framework viejo). Mientras tanto, los tokens son válidos como variables CSS en v3 también.
+2. **(Resuelta como baseline)** `theme-idear.css`: los valores `DERIVADO` se completaron para cumplir el contrato; quedan como baseline a afinar con diseño. Conversión a oklch (uniformar formato con teal) sigue siendo opcional.
+3. **(Resuelta)** Dark mode implementado en ambos temas, dim y preservando la marca (ver sección "Modo oscuro").
+4. **`--font-display` en GT (pendiente):** IDEAR usa Space Grotesk para títulos; GT solo usa Inter. Decidir si GT adopta una fuente display para títulos o se mantiene en Inter.
