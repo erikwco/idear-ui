@@ -1,6 +1,6 @@
 # Skills de idear-ui
 
-Tres skills instalables que automatizan las operaciones del design system. Cada una es
+Cuatro skills instalables que automatizan las operaciones del design system. Cada una es
 **autocontenida** (funciona tras copiarse al `.claude/skills/` de la app destino) pero referencia su
 **doc canónico** en `idear-ui/docs/` para el detalle y la última versión.
 
@@ -9,6 +9,7 @@ Tres skills instalables que automatizan las operaciones del design system. Cada 
 | `apply-idear-tokens` | Aplica una marca (tokens + fuentes + componentes) a una app | [`docs/apply-tokens.md`](../docs/apply-tokens.md) |
 | `extract-idear-tokens` | Destila un preset de marca nuevo desde una app existente | [`docs/extract-tokens.md`](../docs/extract-tokens.md) |
 | `migrate-to-tw4-rr7` | Migra una app TW3+Remix v1 → TW4+RR7, por fases con checkpoints | [`docs/migration-tw4-rr7.md`](../docs/migration-tw4-rr7.md) |
+| `gt-documentos` | Aplica el formato de marca GT a documentos Word (propuestas, informes ejecutivos, cuadros comparativos) respetando el contenido y corrigiendo ortografía | [`gt-documentos/reference/estilo-gt-word.md`](gt-documentos/reference/estilo-gt-word.md) |
 
 ## Instalar en una app destino
 

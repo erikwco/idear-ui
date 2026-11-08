@@ -10,7 +10,7 @@
 #   bash install.sh migrate-to-tw4-rr7 ../shorts       # instala en ../shorts
 #   bash install.sh apply-idear-tokens . --dry-run     # muestra qué haría
 #
-# Skills disponibles: apply-idear-tokens, extract-idear-tokens, migrate-to-tw4-rr7
+# Skills disponibles: apply-idear-tokens, extract-idear-tokens, migrate-to-tw4-rr7, gt-documentos
 
 set -euo pipefail
 
