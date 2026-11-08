@@ -26,6 +26,7 @@ docs/
   extract-tokens.md              Destilar un preset de marca nuevo
 skills/
   apply-idear-tokens/            Skills instalables (apply / extract / migrate) + install.sh
+  gt-documentos/                 Formato de marca GT para documentos Word (tema docx-js + plantillas)
   …
 registry/
   registry.json                  Índice de componentes (formato shadcn registry)
@@ -47,7 +48,7 @@ cada componente (`card` para StatCard, `popover` para HelpHint). Incluidos: **St
 **PageHeader**, **StatCard**, **HelpHint**.
 
 ### Skills
-[`skills/`](skills/) trae `apply-idear-tokens`, `extract-idear-tokens` y `migrate-to-tw4-rr7`,
+[`skills/`](skills/) trae `apply-idear-tokens`, `extract-idear-tokens`, `migrate-to-tw4-rr7` y `gt-documentos` (documentos Word con marca GT),
 instalables en cualquier app con `skills/install.sh`. Ver [`skills/README.md`](skills/README.md).
 
 ## Estado / roadmap

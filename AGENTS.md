@@ -15,7 +15,7 @@ tokens/
 registry/                      registry.json + componentes (StatusBadge, PageHeader, StatCard, HelpHint)
 public/r/                      Salida de `registry:build` (JSON consumible por el CLI shadcn)
 docs/                          Guías paso a paso (ver abajo)
-skills/                        Skills instalables (apply / extract / migrate)
+skills/                        Skills instalables (apply / extract / migrate / gt-documentos)
 ```
 
 ## Las tres marcas
@@ -37,6 +37,7 @@ skills/                        Skills instalables (apply / extract / migrate)
 | **Aplicar una marca** a una app (pintar sus tokens/fuentes) | [`docs/apply-tokens.md`](docs/apply-tokens.md) | `apply-idear-tokens` |
 | **Migrar una app vieja** (TW3 + Remix v1 → TW4 + RR7) | [`docs/migration-tw4-rr7.md`](docs/migration-tw4-rr7.md) | `migrate-to-tw4-rr7` |
 | **Crear un preset de marca nuevo** desde una app existente | [`docs/extract-tokens.md`](docs/extract-tokens.md) | `extract-idear-tokens` |
+| **Dar formato GT a un documento Word** (propuesta, informe ejecutivo, cuadro comparativo) | [`skills/gt-documentos/reference/estilo-gt-word.md`](skills/gt-documentos/reference/estilo-gt-word.md) | `gt-documentos` |
 | Entender los nombres de token y su significado | [`tokens/contract.md`](tokens/contract.md) | — |
 
 ### Camino rápido (lo más común)
